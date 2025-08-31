@@ -309,104 +309,116 @@ footer {
   margin-top: 20px;
 }
 
-/* 📌 MOBILE DEVICES (Phones) */
+/* 📌 UNIVERSAL FIXES */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* Keeps links on one line */
+    align-items: center;
+    flex-wrap: nowrap;  /* Prevents nav links from stacking */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: nowrap;  /* Forces nav links to stay in one row */
+}
+
+.nav-links a {
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+}
+
+/* 📌 RESPONSIVENESS FOR MOBILE */
 @media (max-width: 600px) {
-    /* Navbar */
+    /* Navbar stays inline */
     .navbar {
-        flex-direction: column;
         padding: 0.8rem 1rem;
-        text-align: center;
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 10px;
+        gap: 0.7rem; /* Reduce gap for small screens */
     }
 
     .nav-links a {
-        padding: 0.6rem 1rem;
-        font-size: 16px;
+        font-size: 13px; /* Smaller links on mobile */
+        padding: 0.3rem 0.7rem;
     }
 
     /* Home Section */
-    #home {
-        background-size: cover;
-        padding: 80px 20px;
-        flex-direction: column;
-    }
-
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.7rem; /* Smaller heading */
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-button {
-        padding: 8px 12px;
-        font-size: 14px;
+        font-size: 12px;
+        padding: 6px 12px;
     }
 
     /* About Section */
-    .hero-content-1 {
-        font-size: 20px;
-        padding: 10px;
-    }
-
     .hero-title-1 {
-        font-size: 28px;
+        font-size: 24px;
     }
 
-    /* Skills Section */
-    .skill-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .hero-content-1 {
+        font-size: 16px;
+        padding: 8px;
     }
 
-    .skill-container span {
+    /* Hobbies Section */
+    .head-title {
         font-size: 18px;
-        padding: 6px 10px;
     }
-
-    /* Hobbies Paragraphs */
     .paragraph-1,
     .paragraph-2,
     .paragraph-3 {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    /* Skills Section */
+    .skill-container span {
         font-size: 14px;
-        text-align: justify;
+        padding: 5px 8px;
     }
 
     /* Projects Section */
     .projects-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 12px;
     }
 
     .project-card {
-        padding: 15px;
         font-size: 14px;
+        padding: 15px;
     }
 
     /* Contact Section */
     .contact p {
-        font-size: 18px;
-        padding: 20px;
+        font-size: 16px;
+        padding: 15px;
     }
 
     .section.contact .hi-btn {
-        width: 120px;
-        height: auto;
-        padding: 10px;
-        font-size: 14px;
+        width: 100px;
+        padding: 8px;
+        font-size: 13px;
     }
 
     /* Footer */
     footer {
         font-size: 12px;
-        padding: 10px;
+        padding: 8px;
     }
 }
 
@@ -417,18 +429,14 @@ footer {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .projects-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skill-container span {
-        font-size: 20px;
     }
 }
