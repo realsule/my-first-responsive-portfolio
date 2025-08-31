@@ -24,8 +24,8 @@ body {
 
 }
 .nav-container {
-    display: inline-block;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -310,11 +310,20 @@ footer {
 }
 
 /* 📌 UNIVERSAL FIXES */
+/* NAVBAR STYLING */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgb(28, 110, 164);
     display: flex;
-    justify-content: space-between;  /* Keeps links on one line */
+    justify-content: center;  /* Centers everything */
     align-items: center;
-    flex-wrap: nowrap;  /* Prevents nav links from stacking */
+    gap: 2rem; /* Space between links */
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -322,34 +331,52 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
+    flex-direction: row; /* Force links to stay in one line */
     gap: 1.5rem;
-    flex-wrap: nowrap;  /* Forces nav links to stay in one row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
+    text-decoration: none;
+    background: rgb(21, 77, 113);
+    color: white;
+    font-weight: 700;
+    border-radius: 25px;
     padding: 0.5rem 1rem;
-    font-size: 16px;
+    transition: 0.3s ease;
+    white-space: nowrap; /* Prevent text breaking */
 }
 
-/* 📌 RESPONSIVENESS FOR MOBILE */
+.nav-links a:hover {
+    background: rgb(51, 161, 224);
+    transform: scale(1.05);
+}
+
+/* MAKE IT RESPONSIVE BUT KEEP INLINE NAVBAR */
 @media (max-width: 600px) {
-    /* Navbar stays inline */
     .navbar {
-        padding: 0.8rem 1rem;
+        padding: 0.6rem 1rem;
+        gap: 1rem;
     }
 
     .nav-links {
-        gap: 0.7rem; /* Reduce gap for small screens */
+        gap: 0.5rem; /* Reduce spacing for small screens */
     }
 
     .nav-links a {
-        font-size: 13px; /* Smaller links on mobile */
-        padding: 0.3rem 0.7rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 12px; /* Make links smaller on mobile */
     }
+}
+
 
     /* Home Section */
     .hero-title {
