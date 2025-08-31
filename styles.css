@@ -309,3 +309,126 @@ footer {
   margin-top: 20px;
 }
 
+/* 📌 MOBILE DEVICES (Phones) */
+@media (max-width: 600px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        padding: 0.6rem 1rem;
+        font-size: 16px;
+    }
+
+    /* Home Section */
+    #home {
+        background-size: cover;
+        padding: 80px 20px;
+        flex-direction: column;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* About Section */
+    .hero-content-1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .hero-title-1 {
+        font-size: 28px;
+    }
+
+    /* Skills Section */
+    .skill-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skill-container span {
+        font-size: 18px;
+        padding: 6px 10px;
+    }
+
+    /* Hobbies Paragraphs */
+    .paragraph-1,
+    .paragraph-2,
+    .paragraph-3 {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    /* Projects Section */
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    /* Contact Section */
+    .contact p {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .section.contact .hi-btn {
+        width: 120px;
+        height: auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* 📌 TABLETS (600px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-container span {
+        font-size: 20px;
+    }
+}
