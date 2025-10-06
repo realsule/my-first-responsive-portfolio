@@ -18,8 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
       case "NET":
         vantaEffects[selector] = VANTA.NET({ el: selector, ...options });
         break;
+      case "BIRDS":
+        vantaEffects[selector] = VANTA.BIRDS({ el: selector, ...options });
+        break;
+      case "CELLS":
+        vantaEffects[selector] = VANTA.CELLS({ el: selector, ...options });
+        break;  
       default:
         console.warn("Unknown VANTA effect:", effectName);
+
     }
   }
 
@@ -62,6 +69,46 @@ document.addEventListener("DOMContentLoaded", () => {
     maxDistance: 25.0,
     spacing: 15.0,
   });
+
+   applyVantaEffect("BIRDS", "#hobbies", {
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0x07192f,
+    backgroundAlpha: 1.0,
+    color1: 0xff0000,
+    color2: 0x0d1ff,
+    colorMode: "varianceGradient",
+    quantity: 5,
+    birdSize: 1.0,
+    wingSpan: 30,
+    speedLimit: 5,
+    separation: 20,
+    alignment: 20,
+    cohesion: 20,
+  });
+
+
+  applyVantaEffect("CELLS", "#skills", {
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+
+    // 💡 Custom settings
+    color1: 0x008c8c,
+    color2: 0xf2e735,
+    size: 1.5,
+    speed: 1,
+  });
+
 
   // Cleanup on page unload (important for smooth reloads)
   window.addEventListener("beforeunload", () => {
