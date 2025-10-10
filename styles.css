@@ -361,13 +361,15 @@ footer {
 /* 📱 MOBILE OPTIMIZATION (max 600px) */
 @media (max-width: 600px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
     padding: 0;
+    line-height: 1.5;
   }
 
+  /* ✅ Navbar */
   .navbar {
     flex-direction: column;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .nav-links {
@@ -390,117 +392,163 @@ footer {
   }
 
   .hero-title {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-shadow: 1px 1px 2px #000;
   }
 
   .hero-subtitle {
     font-size: 1.2rem;
+    margin-bottom: 15px;
   }
 
   .hero-button,
   .hero-button-1 {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+    padding: 10px 14px;
+    font-size: 0.95rem;
   }
 
   /* ✅ About Section */
   #About {
     background-size: cover;
     background-position: center;
-    padding: 40px 15px;
+    padding: 50px 20px;
   }
 
-  .hero-title-1 {
-    font-size: 1.6rem;
+  .section-title-1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
-  .hero-content-1 p {
-    font-size: 0.95rem;
-    line-height: 1.5rem;
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #111;
   }
 
   /* ✅ Hobbies Section */
   #hobbies {
-    padding: 40px 15px;
-  }
-  .head-title {
-    font-size: 1.4rem;
-  }
-  .section#hobbies h3 {
-    font-size: 1.1rem;
-  }
-  .section#hobbies p {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
+    padding: 50px 20px;
   }
 
-  /* ✅ Skills */
-  .skill-header {
-    font-size: 1.3rem;
-  }
-  .skill-container span {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
   }
 
-  /* ✅ Projects */
+  .hobby h3 {
+    font-size: 1.2rem;
+  }
+
+  .hobby p {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+
+  /* ✅ Skills Section */
+  .skill-container-5 {
+    gap: 15px;
+  }
+
+  .skill i {
+    font-size: 40px;
+  }
+
+  .skill span {
+    font-size: 0.9rem;
+  }
+
+  /* ✅ Projects Section */
   #project {
-    padding: 40px 15px;
+    padding: 50px 20px;
     background-size: cover;
     background-position: center;
   }
+
   .project-card {
     font-size: 0.9rem;
+    padding: 15px;
   }
 
   /* ✅ Contact Section */
   #contact {
+    padding: 60px 20px;
     background-size: cover;
     background-position: center;
-    padding: 50px 15px;
   }
 
- 
+  .contact-card {
+    width: 95%;
+    max-width: 360px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    border-radius: 25px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 
-  /* ✅ Footer */
+  .contact-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .social-link {
+    min-height: 80px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .social-link i {
+    font-size: 1.8em;
+  }
+
+  .social-link .label {
+    display: none;
+  }
+
   footer {
     font-size: 0.8rem;
-    padding: 10px;
+    padding: 15px;
+  }
+}
+
+/* Tiny Screens (less than 400px) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.6rem;
   }
 
+  .section-title,
+  .section-title-1 {
+    font-size: 1.5rem;
+  }
+
+  .section-text {
+    font-size: 0.9rem;
+  }
+
+  .contact-card {
+    width: 90%;
+    padding: 25px 15px;
+  }
+
+  .social-icons {
+    grid-template-columns: 1fr;
+  }
+}
 
 
-        @media (max-width: 480px) {
-            .contact-card {
-                padding: 30px 20px;
-                max-width: 100%;
-            }
-            .social-icons {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            .social-link {
-                min-height: 70px;
-                padding: 12px 8px;
-            }
-            .social-link i {
-                font-size: 1.8em;
-            }
-            .social-link .label {
-                font-size: 0.8em;
-            }
-        }
-        @media (max-width: 320px) {
-            .social-icons {
-                grid-template-columns: 1fr;
-            }
-        }
 
-
-            /* Contact Card Container */
-        .contact-card {
+ /* Contact Card Container */
+ .contact-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 25px;
