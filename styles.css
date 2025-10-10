@@ -469,13 +469,128 @@ footer {
     font-size: 0.9rem;
     padding: 15px;
   }
+  #vanta-skills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Keep background behind content */
+}
 
+.content-container, 
+.experience-card {
+  position: relative;
+  z-index: 1; /* Bring content in front of Vanta */
+}
+
+
+   
+                /* Responsive Design */
+        @media (max-width: 480px) {
+            .experience-card {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+            .experience-item {
+                padding: 15px;
+            }
+            .experience-item h3 {
+                font-size: 1.1em;
+            }
+            .experience-item p {
+                font-size: 0.85em;
+            }
+            .experience-item i {
+                font-size: 1.3em;
+            }
+        }
+
+      
   /* ✅ Contact Section */
   #contact {
     padding: 60px 20px;
     background-size: cover;
     background-position: center;
   }
+  /* CONTACT SECTION RESPONSIVE FIX */
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+/* Adjust layout for smaller devices */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .social-link i {
+    margin-right: 10px;
+    font-size: 1.4em;
+  }
+
+  .label {
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 25px 15px;
+    border-radius: 15px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.5em;
+  }
+
+  .social-link {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}
+
 
   .contact-card {
     width: 95%;

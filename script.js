@@ -211,3 +211,99 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         `;
         document.head.appendChild(style);
+
+
+                // Optimized JavaScript: Animates progress bars and counters for "crazy" UX
+        // Vanilla JS only; performant with Intersection Observer for scroll-triggered animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            const items = document.querySelectorAll('.experience-item');
+            // Staggered entrance animation trigger
+            items.forEach((item, index) => {
+                item.style.animationPlayState = 'running';
+            });
+            // Animate progress bars on scroll into view (using Intersection Observer for efficiency)
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const percent = parseInt(bar.dataset.percent);
+                        bar.style.width = percent + '%';
+                        bar.classList.add('animate');
+                        bar.setAttribute('aria-valuenow', percent);
+                        // Optional: Counter animation for percentage text (subtle "crazy" pulse)
+                        const counter = bar.querySelector('::after'); // Pseudo-element, but we can simulate with JS if needed
+                        // For more "crazy": Add a quick scale pulse on complete
+                        bar.style.transition = 'width 1.5s ease-out, transform 0.2s ease';
+                        setTimeout(() => {
+                            bar.style.transform = 'scaleX(1.05)';
+                            setTimeout(() => {
+                                bar.style.transform = 'scaleX(1)';
+                            }, 200);
+                        }, 1500);
+                        observer.unobserve(bar); // Animate only once
+                    }
+                });
+            }, observerOptions);
+             progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
+            // Hover enhancements: Add a "sparkle" effect on item hover (simple JS particles for "crazy" flair)
+            items.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    createSparkles(this);
+                });
+                // Keyboard support for accessibility
+                item.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.focus(); // Trigger hover-like state if needed
+                    }
+                });
+            });
+          // Function to create subtle sparkles (performant, limited particles)
+            function createSparkles(element) {
+                for (let i = 0; i < 5; i++) { // Limit to 5 for performance
+                    const sparkle = document.createElement('div');
+                    sparkle.style.cssText = `
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        background: #2a5298;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 10;
+                        animation: sparkle 0.8s ease-out forwards;
+                        left: ${Math.random() * 100}%;
+                        top: ${Math.random() * 100}%;
+                    `;
+                    element.appendChild(sparkle);
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 800);
+                }
+            }
+        });
+          // CSS for sparkle animation (injected via JS for modularity)
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent = `
+            @keyframes sparkle {
+                0% {
+                    opacity: 1;
+                    transform: scale(0) translateY(0);
+                }
+                50% {
+                    opacity: 0.8;
+                    transform: scale(1) translateY(-10px);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0) translateY(-20px);
+                }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
