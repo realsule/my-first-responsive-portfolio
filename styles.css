@@ -132,7 +132,7 @@ body {
     justify-content: center;
     
 }
-.hero-content-1 {
+.content-container-4 {
     font-size: 34px;
     justify-content: center;
     text-align: center;
@@ -140,11 +140,14 @@ body {
     color: #040b0f;
     opacity: 90%;
 }
-.hero-title-1 {
+.section-title-1 {
     font-size: 50px;
     padding: 20px;
-    color: beige;
+    color: rgb(5, 22, 22);
 } 
+.sectiion-text {
+  font-size: 120px
+}
 
 /*HOBBIES SECTION*/
 
@@ -157,49 +160,51 @@ body {
     font-size: 25px;
 }
 
-.head-title {
+.section-title {
     text-align: center;
     color: azure;
     padding: 10px 10px ;
     border-radius: 25px;
 }
 
-#head-paragraph-1 {
+#ho-1 {
+    color: rgb(120, 211, 132);
     text-align: left;
-    padding: 10px;
-    color: rgb(171, 231, 233);
-    display: inline-block;
-    border-radius: 25px;
+    opacity: 90%;
 }
 
-.paragraph-1 {
+#ho-2 {
     color: rgb(172, 211, 212);
     text-align: left;
     opacity: 90%;
 }
 
-#head-paragraph-2 {
+#ho-3 {
+    color: rgb(231, 233, 118);
+    text-align: left;
+    opacity: 90%;
+}
+
+#para-1 {
     color: rgb(15, 199, 39);
     text-align: left;
     padding: 10px 10px;
 }
-.paragraph-2 {
+#para-2 {
     opacity: 90%;
-    color: rgb(42, 218, 42);
+    color: rgb(42, 218, 212);
     text-align: justify;
 }
 
-#head-paragraph-3 {
+#para-3 {
     padding: 10px 10px;
     color: rgb(190, 212, 62);
     opacity: 90%;
 }
-.paragraph-3 {
-   color: rgb(233, 229, 24); 
-}
+
 
 /* SKILLS SECTION*/
-.skill-container {
+.skill-container-5 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -255,7 +260,7 @@ body {
 }
 
 .project-card {
-  background: beige;
+  background: rgb(138, 138, 94);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -286,45 +291,27 @@ body {
 #contact {
     background-image: url("https://images.unsplash.com/photo-1701410949547-bd154476207c?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: 130%;
-} 
-
-.section h2 {
-    text-align: center;
-    padding: 20px;
-    color: beige;
-    font-size: 30px;
+    position: relative;
+    overflow: hidden;
 }
 
-.contact p {
-  margin-bottom: 20px;
-  font-size: 30px;
-  text-align: center;
-  padding: 60px;
-  color: char;
+#contact-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
-.section.contact .hi-btn {
-  color: #f4f4f9;
-  justify-content: center;
-  padding-bottom: 2px;
-  font-size: large;
-  display: flex;
-  flex-wrap: wrap;
-  text-decoration: none;
-  margin: 0 auto;
-  background: #000b0c;
-  width: 100px;
-  height: 20px;
-  border-radius: 20px;
+.contact-card {
+  color: #128c7e;
+  position: relative;
+  z-index: 2; /* keeps it above the animation */
 }
 
-.hi-btn:hover {
-  background: #441414;
-  transform: scale(1.05);
-  color: #f8f2ed;
-  transition: transform 0.3s ease;
-  box-shadow: 0 10px 20px;
-}
+
+
 /*FOOTER SECTION*/
 footer {
   text-align: center;
@@ -474,20 +461,251 @@ footer {
     padding: 50px 15px;
   }
 
-  .contact p {
-    font-size: 1rem;
-    padding: 20px;
-  }
-
-  .hi-btn {
-    width: 120px;
-    height: auto;
-    padding: 10px 0;
+ 
   }
 
   /* ✅ Footer */
   footer {
     font-size: 0.8rem;
     padding: 10px;
+  }
+
+
+
+        @media (max-width: 480px) {
+            .contact-card {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+            .social-icons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .social-link {
+                min-height: 70px;
+                padding: 12px 8px;
+            }
+            .social-link i {
+                font-size: 1.8em;
+            }
+            .social-link .label {
+                font-size: 0.8em;
+            }
+        }
+        @media (max-width: 320px) {
+            .social-icons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+            /* Contact Card Container */
+        .contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 55px 45px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  max-width: 550px; /* bigger on laptop screens */
+  width: 90%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card h2 {
+  margin-bottom: 35px;
+  font-size: 1.9em;
+  color: #4a5568;
+  position: relative;
+}
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        .contact-card:hover::before {
+            left: 100%;
+        }
+       
+        .contact-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        /* Social Icons Grid */
+        .social-icons {
+            display: grid;
+            grid-template-columns: repeat((4, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+         .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #4a5568;
+            padding: 18px 10px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* "Crazy" bouncy easing */
+            position: relative;
+            overflow: hidden;
+            min-height: 100px;
+            justify-content: center;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
+        .social-link:hover::before {
+            left: 100%;
+        }
+        .social-link:hover {
+            transform: translateY(-8px) rotate(5deg) scale(1.1); /* Slight tilt and scale for "crazy" effect */
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+            .social-link i {
+            font-size: 2.3em;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            z-index: 2;
+           
+        }
+        .social-link:hover i {
+            transform: rotate(360deg) scale(1.2); /* Full spin on hover for attention-grabbing */
+            color: inherit;
+        }
+        .social-link .label {
+            font-size: 0.9em;
+            font-weight: 500;
+            opacity: 0.9;
+            z-index: 2;
+            position: relative;
+            white-space: nowrap;
+        }
+        /* Brand-Specific Colors on Hover */
+        .whatsapp:hover {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+        .whatsapp:hover i {
+            color: #fff;
+        }
+          .email:hover {
+            background: linear-gradient(135deg, #ea4335, #fbbc04);
+        }
+        .email:hover i {
+            color: #fff;
+        }
+        .instagram:hover {
+            background: linear-gradient(135deg, #e4405f, #f77737);
+        }
+        .instagram:hover i {
+            color: #fff;
+        }
+        .github:hover {
+            background: linear-gradient(135deg, #333, #6f42c1);
+        }
+        .github:hover i {
+            color: #fff;
+        }
+        /* Entrance Animation (CSS Keyframes) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Focus States for Accessibility */
+        .social-link:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+       
+
+/* === Responsive Tweaks === */
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+  .contact-card {
+    max-width: 480px;
+    padding: 45px 35px;
+  }
+  .social-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .contact-card {
+    width: 90%;
+    max-width: 360px;
+    padding: 30px 20px;
+  }
+
+  /* smaller grid layout */
+  .social-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* show only icons, hide text labels */
+  .social-link .label {
+    display: none;
+  }
+
+  .social-link i {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .social-link {
+    min-height: 80px;
+    padding: 12px;
+  }
+}
+
+/* Tiny screens */
+@media (max-width: 320px) {
+  .social-icons {
+    grid-template-columns: 1fr;
   }
 }
