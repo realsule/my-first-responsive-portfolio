@@ -42,19 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 🌊 ABOUT SECTION - Waves effect
-  applyVantaEffect("WAVES", "#About", {
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    color: 0x0077ff,
-    shininess: 35,
-    waveHeight: 20,
-    waveSpeed: 1.2,
-    zoom: 0.9,
-    backgroundColor: 0x000000,
-  });
+ 
 
   // 🕸️ PROJECTS SECTION - Net effect
   applyVantaEffect("NET", "#project", {
